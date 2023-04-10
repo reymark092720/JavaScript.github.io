@@ -1,0 +1,149 @@
+:root{
+    --bs-dark: #212529;
+  }
+  body 
+      {
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          user-select: none;
+          background: #ecf0f3;
+      }
+  
+  
+  .theme-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .theme-container:hover {
+    opacity: 0.8;
+  }
+  
+  .shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+      -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+      inset -5px -5px 4px #24282c;
+  }
+  
+  .shadow-light {
+    box-shadow: 7px 7px 15px -10px #bbcfda, -4px -4px 13px #ffffff,
+      inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+      inset -11px -11px 3px rgba(255, 255, 255, 0.3)
+  }
+  .background-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    box-shadow: 17px 17px 23px #1a1d20,
+      -17px -17px 23px #282d32, inset 5px 5px 4px #1e2226,
+      inset -5px -5px 4px #24282c;
+  }
+  
+  @keyframes change {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(1.4);
+    }
+  }
+  
+  .change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  }
+  
+  .container {
+      margin-left: 1.8em;
+      padding: 30px 20px 20px 20px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px #cbced1,
+                  -5px -5px 5px #ffffff; 
+  }
+  
+      .row button 
+      {
+          width: 21%;
+          height: 50px;
+          font-size: 18px;
+          font-weight: 500;
+          border: none;
+          outline: none;
+          margin: 1.6%;
+          border-radius: 4px;
+          transition: .1s;
+  
+      }
+  
+      .row button:hover 
+      {
+          box-shadow:  inset 5px 5px 8px rgba(16, 16, 16, .1),
+                       inset -5px -5px 8px #fff;
+          background: #fff;
+      }
+  
+      .display #screen 
+      {
+          margin-bottom: .5em;
+          width: 460px;
+          height: 70px;
+          font-size: 35px;
+          outline: none;
+          border: none;
+          text-align: right;
+          padding-right: .5em;
+          background: #ecf0f3;
+          border-radius: 6px;
+          box-shadow: inset 8px 8px 8px #cbced1,
+                      inset -8px -8px 8px #ffffff;
+      }
+  
+      #eval 
+      {
+          background: #263f50;
+          color: white;
+          box-shadow: inset 5px 5px 8px #305269,
+                      inset -5px -5px 8px #1c3140;
+      }
+  
+      #eval:hover 
+      {
+          box-shadow: inset 5px 5px 8px #28658f,
+                      inset -5px -5px 8px #2e5169;
+      }
+  
+      #ce 
+      {
+          background: #39cb8d;
+          color: #fff;
+      }
+  
+      #ce:hover 
+      {
+          box-shadow: inset 5px 5px 8px #43de9c,
+                      inset -5px -5px 8px #2bb57b;
+      }
+  
+      #ac 
+      {
+          background: #e84c3d;
+          color: #fff;
+      }
+  
+      #ac:hover 
+      {
+            box-shadow: inset 5px 5px 8px #f75c4d,
+                        inset -5px -5px 8px #cc4437;
+      }

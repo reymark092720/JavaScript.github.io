@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/calculator.css">
+</head>
+
+
+<body>
+
+    <div class="theme-container shadow-dark">
+        <img id="theme-icon"    src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    </div>
+        <div class="container">
+            <div class="display">
+            <input id="screen" type="text" placeholder="0">
+        </div>
+        <div class="btns">
+            <div class="row">
+                <button class="btn">%</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button id="ac" onclick="screen.value=''">AC</button>
+            </div>
+            <div class="row">           
+                <button onclick="fact()">x!</button>
+                <button onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">y</span></button>
+                <button onclick="sqrt()">√</button>
+                <button id="ce" onclick="backspc()">CE</button>
+            </div>
+            <div class="row">
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">÷</button>                
+            </div>
+            <div class="row">
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">×</button>               
+            </div>
+            <div class="row">                
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>                
+            </div>
+            <div class="row">
+                <button class="btn">.</button>
+                <button class="btn">0</button>
+                <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+                <button class="btn">+</button>               
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.body.style="background-color: var(--bs-dark);transition: 0.5s;"
+const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+
+var theme = "dark";
+  const root = document.querySelector(":root");
+  const container = document.getElementsByClassName("theme-container")[0];
+  const themeIcon = document.getElementById("theme-icon");
+  container.addEventListener("click", setTheme);
+  function setTheme() {
+    switch (theme) {
+      case "dark":
+        setLight();
+        theme = "light";
+        break;
+      case "light":
+        setDark();
+        theme = "dark";
+        break;
+    }
+  }
+  function setLight() {
+    root.style.setProperty(
+      "--bs-dark",
+      "linear-gradient(318.32deg, #c3d1e4 0%, #dde7f3 55%, #d4e0ed 100%)"
+    );
+    container.classList.remove("shadow-dark");
+    setTimeout(() => {
+      container.classList.add("shadow-light");
+      themeIcon.classList.remove("change");
+    }, 300);
+    themeIcon.classList.add("change");
+    themeIcon.src = sun;
+  }
+  function setDark() {
+    root.style.setProperty("--bs-dark", "#212529");
+    container.classList.remove("shadow-light");
+    setTimeout(() => {
+      container.classList.add("shadow-dark");
+      themeIcon.classList.remove("change");
+    }, 300);
+    themeIcon.classList.add("change");
+    themeIcon.src = moon;
+  }
+var screen = document.querySelector('#screen');
+    var btn = document.querySelectorAll('.btn, btn.dot');
+
+    /*============ For getting the value of btn, Here we use for loop ============*/
+    for (item of btn) {
+        item.addEventListener('click', (e) => {
+            btntext = e.target.innerText;
+
+            if (btntext == '×') {
+                btntext = '*';
+            }
+
+            if (btntext == '÷') {
+                btntext = '/';
+            }
+
+            screen.value += btntext;
+        });
+    }
+
+    
+    function pow() {
+        screen.value = Math.pow(screen.value, 2);
+    }
+    function pow() {
+        screen.value = Math.pow(screen.value, 2);
+    }
+
+    function sqrt() {
+        screen.value = Math.sqrt(screen.value, 2);
+    }
+
+    function fact() {
+        var i, num, f;
+        f = 1
+        num = screen.value;
+        for (i = 1; i <= num; i++) {
+            f = f * i;
+        }
+
+        i = i - 1;
+
+        screen.value = f;
+    }
+
+    function backspc() {
+        screen.value = screen.value.substr(0, screen.value.length - 1);
+    }
+</script>
+</html>
